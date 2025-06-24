@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحفيز الطلاب</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .student-list {
+      list-style: none;
+      padding: 0;
+    }
+    .student-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+      padding: 10px;
+      background-color: #e3e3e3;
+      border-radius: 5px;
+    }
+    .student-name {
+      font-size: 18px;
+    }
+    .stars {
+      font-size: 18px;
+      color: gold;
+    }
+    .add-points {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .add-points:hover {
+      background-color: #45a049;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h2>لوحة تحفيز الطلاب</h2>
+    <p>قم بإضافة النجوم أو النقاط للطلاب لتحفيزهم!</p>
+  </div>
+
+  <ul class="student-list" id="studentList">
+    <li class="student-item" id="student-Ahmed">
+      <span class="student-name">أحمد</span>
+      <span class="stars" id="stars-Ahmed">⭐ 3</span>
+      <button class="add-points" onclick="addPoints('Ahmed')">أضف نقطة</button>
+    </li>
+    <li class="student-item" id="student-Sarah">
+      <span class="student-name">سارة</span>
+      <span class="stars" id="stars-Sarah">⭐ 5</span>
+      <button class="add-points" onclick="addPoints('Sarah')">أضف نقطة</button>
+    </li>
+    <li class="student-item" id="student-Mohammed">
+      <span class="student-name">محمد</span>
+      <span class="stars" id="stars-Mohammed">⭐ 2</span>
+      <button class="add-points" onclick="addPoints('Mohammed')">أضف نقطة</button>
+    </li>
+    <li class="student-item" id="student-Lama">
+      <span class="student-name">لمياء</span>
+      <span class="stars" id="stars-Lama">⭐ 4</span>
+      <button class="add-points" onclick="addPoints('Lama')">أضف نقطة</button>
+    </li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p>تم تصميم هذه اللوحة بواسطة <a href="#">فريقك التعليمي</a></p>
+</div>
+
+<script>
+  function addPoints(student) {
+    const starsElement = document.getElementById('stars-' + student);
+    let currentStars = parseInt(starsElement.textContent.split(' ')[1]);
+    currentStars++;
+    starsElement.textContent = `⭐ ${currentStars}`;
+  }
+</script>
+
+</body>
+</html>
